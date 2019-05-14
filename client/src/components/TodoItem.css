@@ -1,0 +1,35 @@
+.to-Do-Item{
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: #4d4d4d;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.to-Do-Item > p{
+    padding: 10px 5px;
+    font-size: 18px;
+    margin: 0px;
+    margin-left: 20px;
+    flex-grow: 8;
+}
+.to-Do-Item img{
+    width: 30px;
+    cursor: pointer;
+}
+.to-Do-Item .btnDelete{
+    display: none;
+    width: 20px
+}
+.to-Do-Item:hover > .btnDelete{
+    display: block;
+}
+.to-Do-Item:not(:last-child){
+    border-bottom: 1px solid darkgray;
+}
+.to-Do-Item-Done > p{
+    text-decoration: line-through;
+    opacity: 0.3;
+}

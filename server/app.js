@@ -1,3 +1,6 @@
+//khai bao bien moi truong process.env
+require('dotenv').config();
+
 // module
 const express = require('express');
 const mongoose = require('mongoose');
@@ -7,7 +10,7 @@ const cors = require('cors');
 const todoRoutes = require('./routes');
 
 // connet database
-mongoose.connect('mongodb://localhost/todo', {useNewUrlParser: true })
+mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true })
 
 // create saver
 const app = express();
@@ -21,4 +24,4 @@ app.use(bodyParser.json());
 app.use('/apis/todos', todoRoutes);
 
 // runserver
-app.listen(5000, () => console.log('Server in running port: 5000'));
+app.listen(process.env.PORT || 5000);

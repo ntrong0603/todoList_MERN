@@ -4,12 +4,15 @@ import TodoItem from './components/TodoItem';
 import classnames from 'classnames';
 import checkAll from './components/images/check-all.svg';
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:5000/apis/todos';
+require('dotenv').config();
+
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 // Immutability khong co kha nang thay doi trang thai ben trong
 //"mutate thay doi trang thai ben trong"
 class App extends Component {
   constructor(){
+    console.log(process.env.REACT_APP_API_URL);
     super();
     this.state ={ 
       todoItems: [],
